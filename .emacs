@@ -33,6 +33,5 @@
 (global-set-key (kbd "C-x <right>") 'windmove-right)
 (global-set-key (kbd "<drag-mouse-9>") 'next-buffer)
 (global-set-key (kbd "<drag-mouse-8>") 'previous-buffer)
-(global-set-key (kbd "<Scroll_Lock>") 'windmove-lef)
 (global-set-key (kbd "C-c #") 'comment-dwim)
  
