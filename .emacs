@@ -1,7 +1,6 @@
 
 (package-initialize)
 
-(scroll-bar-mode -1)
 (electric-pair-mode 1)
 (add-to-list 'auto-mode-alist '("\.py\'" . python-mode))
 (tool-bar-mode -1)
