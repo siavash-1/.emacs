@@ -1,0 +1,62 @@
+;;emacs with spelling
+(package-initialize)
+
+
+
+(require 'flyspell)
+(flyspell-mode +1)
+
+(electric-pair-mode 1)
+
+(custom-set-variables
+
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(custom-enabled-themes (quote (wombat))))
+(custom-set-faces
+
+ )
+
+(defvar myPackages
+
+  '(better-defaults                
+
+    elpy                           
+
+    flycheck                       
+
+    py-autopep8 
+
+    
+
+    )
+
+  )
+
+
+
+
+(elpy-enable)
+
+
+(when (require 'flycheck nil t)
+
+  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+
+  (add-hook 'elpy-mode-hook 'flycheck-mode))
+
+
+
+
+(require 'py-autopep8)
+
+(add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
+
+(global-set-key (kbd "C-c #") 'comment-dwim)
+
+
+    
+ (dolist (hook '(text-mode-hook))
+   (add-hook hook (lambda () (flyspell-mode 1))))
+ (dolist (hook '(change-log-mode-hook log-edit-mode-hook))
+   (add-hook hook (lambda () (flyspell-mode -1))))
